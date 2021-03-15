@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.controller.dto.author;
+package br.com.casaDoCodigo.controller.dto;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -26,6 +26,12 @@ public class AuthorDto {
 		this.name = name;
 		this.email = email;
 		this.description = description;
+	}
+
+	public AuthorDto(Author author) {
+		this.name = author.getName();
+		this.email = author.getEmail();
+		this.description = author.getDescription();
 	}
 
 	public String getName() {

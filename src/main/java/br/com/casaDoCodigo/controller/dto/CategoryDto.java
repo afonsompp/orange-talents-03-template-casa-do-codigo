@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.controller.dto.category;
+package br.com.casaDoCodigo.controller.dto;
 
 import javax.validation.constraints.NotBlank;
 
