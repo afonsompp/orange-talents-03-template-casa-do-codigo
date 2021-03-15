@@ -2,13 +2,13 @@ package br.com.casaDoCodigo.controller.dto.category;
 
 import javax.validation.constraints.NotBlank;
 
-import br.com.casaDoCodigo.Validation.Validator.UniqueCategoryConstraint;
+import br.com.casaDoCodigo.Validation.Validator.UniqueFieldConstraint;
 import br.com.casaDoCodigo.model.Category;
 
 public class CategoryDto {
 
 	@NotBlank
-	@UniqueCategoryConstraint
+	@UniqueFieldConstraint(message = "{category.unique}", columnName = "name", model = Category.class)
 	private String name;
 
 	public CategoryDto() {
@@ -29,5 +29,4 @@ public class CategoryDto {
 	public Category parseToCategory() {
 		return new Category(name);
 	}
-
 }

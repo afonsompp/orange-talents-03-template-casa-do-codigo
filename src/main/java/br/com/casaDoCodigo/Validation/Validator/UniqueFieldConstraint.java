@@ -10,11 +10,15 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 @Documented
-@Constraint(validatedBy = UniqueEmailValidator.class)
-@Target({ ElementType.METHOD, ElementType.FIELD })
+@Constraint(validatedBy = UniqueFieldValidator.class)
+@Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UniqueEmailConstraint {
-	String message() default "Email not must be unique";
+public @interface UniqueFieldConstraint {
+	String columnName();
+
+	Class<?> model();
+
+	String message() default "{UniqueKey.message}";
 
 	Class<?>[] groups() default {};
 
