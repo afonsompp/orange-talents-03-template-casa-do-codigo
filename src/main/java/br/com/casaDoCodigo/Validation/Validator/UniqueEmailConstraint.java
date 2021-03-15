@@ -14,7 +14,7 @@ import javax.validation.Payload;
 @Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UniqueEmailConstraint {
-	String message() default "Email must be unique";
+	String message() default "Email not must be unique";
 
 	Class<?>[] groups() default {};
 
