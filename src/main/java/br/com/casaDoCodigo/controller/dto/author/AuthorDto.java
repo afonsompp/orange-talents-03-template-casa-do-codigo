@@ -4,6 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.casaDoCodigo.Validation.Validator.UniqueEmailConstraint;
 import br.com.casaDoCodigo.model.Author;
 
 public class AuthorDto {
@@ -12,12 +13,11 @@ public class AuthorDto {
 	private String name;
 	@NotBlank
 	@Email
-
+	@UniqueEmailConstraint(message = "{email.unique}")
 	private String email;
 	@NotBlank
 	@Size(max = 400)
 	private String description;
-
 
 	public AuthorDto() {
 	}
