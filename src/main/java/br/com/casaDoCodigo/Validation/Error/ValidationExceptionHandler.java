@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.Validation;
+package br.com.casaDoCodigo.Validation.Error;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +17,8 @@ public class ValidationExceptionHandler {
 
 	private final MessageSource messageSource;
 
+	private final String INVALID_DATA = "invalid.data.message";
+
 	public ValidationExceptionHandler(MessageSource messageSource) {
 		this.messageSource = messageSource;
 	}
@@ -26,7 +28,9 @@ public class ValidationExceptionHandler {
 	public ObjectError handler(MethodArgumentNotValidException exception) {
 		List<FieldErrors> errors = extractFieldWithErrors(exception);
 
-		var error = new ObjectError("A requisição possui valores inválidos", HttpStatus.BAD_REQUEST.value(), errors);
+		String message = messageSource.getMessage(INVALID_DATA, null, LocaleContextHolder.getLocale());
+
+		var error = new ObjectError(message, HttpStatus.BAD_REQUEST.value(), errors);
 
 		return error;
 	}

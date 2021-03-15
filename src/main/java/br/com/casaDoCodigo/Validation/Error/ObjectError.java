@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.Validation;
+package br.com.casaDoCodigo.Validation.Error;
 
 import java.time.Instant;
 import java.util.List;
