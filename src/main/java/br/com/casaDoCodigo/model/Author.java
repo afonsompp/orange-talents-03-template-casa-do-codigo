@@ -26,7 +26,6 @@ public class Author implements Serializable {
 	@Column(nullable = false)
 	private Instant createAt;
 
-
 	public Author() {
 	}
 
@@ -35,6 +34,10 @@ public class Author implements Serializable {
 		this.email = email;
 		this.description = description;
 		this.createAt = Instant.now();
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getName() {
