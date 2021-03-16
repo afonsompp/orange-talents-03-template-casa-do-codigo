@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.Validation.Error;
+package br.com.casaDoCodigo.Error;
 
 public class FieldErrors {
 
