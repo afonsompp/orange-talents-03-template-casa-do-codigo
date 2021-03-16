@@ -14,16 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.casaDoCodigo.controller.dto.AllBookResponseDto;
 import br.com.casaDoCodigo.controller.dto.BookDto;
+import br.com.casaDoCodigo.controller.dto.DetailBookResponseDto;
 import br.com.casaDoCodigo.repository.AuthorRepository;
 import br.com.casaDoCodigo.repository.BookRepository;
 import br.com.casaDoCodigo.repository.CategoryRepository;
-
-import javax.validation.Valid;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
 
 @RestController
 @RequestMapping("/books")
@@ -55,6 +49,16 @@ public class BookController {
 		var response = AllBookResponseDto.parseToDto(books);
 
 		return response;
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<DetailBookResponseDto> getById(@PathVariable("id") Long id) {
+		var book = bookRepository.findById(id);
+
+		if (!book.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(new DetailBookResponseDto(book.get()));
 	}
 
 }
