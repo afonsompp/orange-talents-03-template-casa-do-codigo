@@ -16,6 +16,8 @@ import javax.validation.Payload;
 public @interface UniqueFieldConstraint {
 	String columnName();
 
+	String foreignKeyName() default "";
+
 	Class<?> model();
 
 	String message() default "{UniqueKey.message}";
