@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.casaDoCodigo.controller.dto.AuthorDto;
+import br.com.casaDoCodigo.controller.dto.AuthorResponseDto;
 import br.com.casaDoCodigo.repository.AuthorRepository;
 
 @RestController
@@ -22,9 +23,9 @@ public class AuthorController {
 	}
 
 	@PostMapping
-	public ResponseEntity<AuthorDto> saveAuthor(@RequestBody @Valid final AuthorDto authorDto) {
+	public ResponseEntity<AuthorResponseDto> saveAuthor(@RequestBody @Valid final AuthorDto authorDto) {
 		var author = authorRepository.save(authorDto.parseToAuthor());
-		var response = new AuthorDto(author);
+		var response = new AuthorResponseDto(author);
 		return ResponseEntity.ok(response);
 	}
 

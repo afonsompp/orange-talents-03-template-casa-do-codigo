@@ -46,31 +46,6 @@ public class BookDto {
 	public BookDto() {
 	}
 
-	public BookDto(String title, String resume, String sumary, BigDecimal price, Integer numberOfPage, String isbn,
-			LocalDate publicationDate, Long categoryId, Long authorId) {
-		this.title = title;
-		this.resume = resume;
-		this.sumary = sumary;
-		this.price = price;
-		this.numberOfPage = numberOfPage;
-		this.isbn = isbn;
-		this.publicationDate = publicationDate;
-		this.categoryId = categoryId;
-		this.authorId = authorId;
-	}
-
-	public BookDto(Book book) {
-		this.title = book.getTitle();
-		this.resume = book.getResume();
-		this.sumary = book.getSumary();
-		this.price = book.getPrice();
-		this.numberOfPage = book.getNumberOfPage();
-		this.isbn = book.getIsbn();
-		this.publicationDate = book.getPublicationDate();
-		this.categoryId = book.getCategory().getId();
-		this.authorId = book.getAuthor().getId();
-	}
-
 	public String getTitle() {
 		return this.title;
 	}

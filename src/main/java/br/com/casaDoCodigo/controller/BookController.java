@@ -35,12 +35,12 @@ public class BookController {
 	}
 
 	@PostMapping
-	public ResponseEntity<BookDto> save(@RequestBody @Valid BookDto bookDto) {
+	public ResponseEntity<DetailBookResponseDto> save(@RequestBody @Valid BookDto bookDto) {
 
 		var book = bookDto.parseToBook(authorRepository, categoryRepository);
 		var savedBook = bookRepository.save(book);
 
-		return ResponseEntity.ok(new BookDto(savedBook));
+		return ResponseEntity.ok(new DetailBookResponseDto(savedBook));
 	}
 
 	@GetMapping

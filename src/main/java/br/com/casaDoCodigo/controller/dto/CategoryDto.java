@@ -18,10 +18,6 @@ public class CategoryDto {
 		this.name = name;
 	}
 
-	public CategoryDto(Category category) {
-		this.name = category.getName();
-	}
-
 	public String getName() {
 		return name;
 	}

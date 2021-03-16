@@ -28,12 +28,6 @@ public class AuthorDto {
 		this.description = description;
 	}
 
-	public AuthorDto(Author author) {
-		this.name = author.getName();
-		this.email = author.getEmail();
-		this.description = author.getDescription();
-	}
-
 	public String getName() {
 		return this.name;
 	}

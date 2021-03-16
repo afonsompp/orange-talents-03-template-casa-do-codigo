@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.casaDoCodigo.controller.dto.CategoryDto;
+import br.com.casaDoCodigo.controller.dto.CategoryResponseDto;
 import br.com.casaDoCodigo.repository.CategoryRepository;
 
 @RestController
@@ -22,11 +23,11 @@ public class CategoryController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<CategoryDto> postMethodName(@RequestBody @Valid CategoryDto categoryDto) {
+	public ResponseEntity<CategoryResponseDto> postMethodName(@RequestBody @Valid CategoryDto categoryDto) {
 
 		var category = categoryRepository.save(categoryDto.parseToCategory());
 
-		return ResponseEntity.ok(new CategoryDto(category));
+		return ResponseEntity.ok(new CategoryResponseDto(category));
 	}
 
 }
