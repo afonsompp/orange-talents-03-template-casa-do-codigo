@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.Validation.Validator;
+package br.com.casaDoCodigo.Validation;
 
 import javax.persistence.EntityManager;
 import javax.validation.ConstraintValidator;

@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import br.com.casaDoCodigo.Validation.Validator.UniqueFieldConstraint;
+import br.com.casaDoCodigo.Validation.UniqueFieldConstraint;
 import br.com.casaDoCodigo.model.Author;
 
 public class AuthorDto {

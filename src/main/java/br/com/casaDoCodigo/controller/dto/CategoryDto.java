@@ -2,7 +2,7 @@ package br.com.casaDoCodigo.controller.dto;
 
 import javax.validation.constraints.NotBlank;
 
-import br.com.casaDoCodigo.Validation.Validator.UniqueFieldConstraint;
+import br.com.casaDoCodigo.Validation.UniqueFieldConstraint;
 import br.com.casaDoCodigo.model.Category;
 
 public class CategoryDto {

@@ -1,4 +1,4 @@
-package br.com.casaDoCodigo.Validation.Validator;
+package br.com.casaDoCodigo.Validation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
