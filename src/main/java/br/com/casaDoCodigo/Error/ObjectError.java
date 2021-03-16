@@ -3,6 +3,9 @@ package br.com.casaDoCodigo.Error;
 import java.time.Instant;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ObjectError {
 
 	private String message;
@@ -15,7 +18,12 @@ public class ObjectError {
 		this.status = status;
 		this.instant = Instant.now();
 		this.errors = errors;
+	}
 
+	public ObjectError(String message, Integer status) {
+		this.message = message;
+		this.status = status;
+		this.instant = Instant.now();
 	}
 
 	public ObjectError() {
